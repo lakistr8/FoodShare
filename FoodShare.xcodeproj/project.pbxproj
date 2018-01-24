@@ -12,6 +12,7 @@
 		38BF93692018825A007A4C86 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38BF93672018825A007A4C86 /* LaunchScreen.storyboard */; };
 		38BF9371201882FA007A4C86 /* OAuthStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38BF9370201882FA007A4C86 /* OAuthStoryboard.storyboard */; };
 		38BF937320188316007A4C86 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BF937220188316007A4C86 /* LoginViewController.swift */; };
+		38BF937620188464007A4C86 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BF937520188464007A4C86 /* BaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		38BF936A2018825A007A4C86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		38BF9370201882FA007A4C86 /* OAuthStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OAuthStoryboard.storyboard; sourceTree = "<group>"; };
 		38BF937220188316007A4C86 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		38BF937520188464007A4C86 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +56,31 @@
 		38BF935D2018825A007A4C86 /* FoodShare */ = {
 			isa = PBXGroup;
 			children = (
-				38BF935E2018825A007A4C86 /* AppDelegate.swift */,
-				38BF9370201882FA007A4C86 /* OAuthStoryboard.storyboard */,
-				38BF937220188316007A4C86 /* LoginViewController.swift */,
+				38BF937720188469007A4C86 /* Base */,
+				38BF937420188453007A4C86 /* OAuth */,
 				38BF93652018825A007A4C86 /* Assets.xcassets */,
 				38BF93672018825A007A4C86 /* LaunchScreen.storyboard */,
 				38BF936A2018825A007A4C86 /* Info.plist */,
+				38BF935E2018825A007A4C86 /* AppDelegate.swift */,
 			);
 			path = FoodShare;
+			sourceTree = "<group>";
+		};
+		38BF937420188453007A4C86 /* OAuth */ = {
+			isa = PBXGroup;
+			children = (
+				38BF9370201882FA007A4C86 /* OAuthStoryboard.storyboard */,
+				38BF937220188316007A4C86 /* LoginViewController.swift */,
+			);
+			path = OAuth;
+			sourceTree = "<group>";
+		};
+		38BF937720188469007A4C86 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				38BF937520188464007A4C86 /* BaseViewController.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +157,7 @@
 			files = (
 				38BF937320188316007A4C86 /* LoginViewController.swift in Sources */,
 				38BF935F2018825A007A4C86 /* AppDelegate.swift in Sources */,
+				38BF937620188464007A4C86 /* BaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
