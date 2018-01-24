@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-class BaseViewController: UIViewController {
+class BaseViewController: UIViewController, BaseViewControllerProtocol {
     
     let clientID = "4YCWUAVMPUF1MOZEORUOFDSPFADBXL5JB0NISIJEKD3W2NKI"
     let sicretSecret = "OP4JFDTMOTMNE1T4WZ5VLFERC2M23QDMHXP5Z4101WLTEE3V"
@@ -34,7 +34,17 @@ class BaseViewController: UIViewController {
             }
         }.resume()
     }
-
     
+    func openController(name:String, storyboard:String) {
+        let str = UIStoryboard(name: "\(storyboard)Storyboard", bundle: nil)
+        guard let vc = str.instantiateViewController(withIdentifier: "\(name)ViewController") as? UIViewController else {
+            fatalError("falied to create \(name) view controller")
+        }
+        self.present(vc, animated: true, completion: nil)
+    }
+
+    func close() {
+        self.dismiss(animated: true, completion: nil)
+    }
 
 }
