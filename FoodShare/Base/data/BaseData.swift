@@ -20,13 +20,13 @@ struct BaseData {
     var country: String
     
     init(data: JSON) {
-        self.id = data["id"].string!
-        self.name = data["name"].string!
-        self.lat = data["location"]["lat"].double!
-        self.lng = data["location"]["lng"].double!
-        self.address = data["location"]["address"].string!
-        self.city = data["location"]["city"].string!
-        self.country = data["location"]["country"].string!
+        self.id = data["id"].stringValue
+        self.name = data["name"].stringValue
+        self.lat = data["location"]["lat"].doubleValue
+        self.lng = data["location"]["lng"].doubleValue
+        self.address = data["location"]["address"].stringValue
+        self.city = data["location"]["city"].stringValue
+        self.country = data["location"]["country"].stringValue
     }
     
 }

@@ -12,7 +12,7 @@ class LoginViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.getAllHotels()
+        self.fetch(using:"fast_food")
     }
 
     
