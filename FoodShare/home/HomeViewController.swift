@@ -1,5 +1,5 @@
 //
-//  LoginViewController.swift
+//  HomeViewController.swift
 //  FoodShare
 //
 //  Created by Lazar Andonov on 1/24/18.
@@ -8,13 +8,13 @@
 
 import UIKit
 
-class LoginViewController: BaseViewController {
+class HomeViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.fetch(using: "bar", and:"BaseCollectionView")
-    }
 
+        self.fetch(using: "fast_food", and: "BaseCollectionView")
+    }
     
 
 }

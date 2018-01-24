@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        let storyboard = UIStoryboard(name: "OAuthStoryboard", bundle: nil)
+        let storyboard = UIStoryboard(name: "HomeStoryboard", bundle: nil)
         guard let nc = storyboard.instantiateInitialViewController() as? UINavigationController else {
             fatalError("Failed to create Login Controller")
         }
