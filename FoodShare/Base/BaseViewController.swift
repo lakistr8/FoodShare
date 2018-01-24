@@ -21,7 +21,14 @@ class BaseViewController: UIViewController, BaseViewControllerProtocol {
         
     }
     
-    func fetch(using query:String) {
+    func initialize(component:String, data:[BaseData]) {
+        let nib = UINib(nibName: component, bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! BaseComponent
+        nib.frame = self.view.frame
+        nib.initializer(data:data)
+        self.view.addSubview(nib)
+    }
+    
+    func fetch(using query:String, and component:String) {
         let url = "https://api.foursquare.com/v2/venues/search?client_id=\(clientID)&client_secret=\(sicretSecret)&ll=44.8193266,20.4619653&query=\(query)&v=20180124"
         let fullUrl = URL(string:url)
         Alamofire.request(fullUrl!).responseJSON { response in
@@ -29,8 +36,8 @@ class BaseViewController: UIViewController, BaseViewControllerProtocol {
                 let jSON = JSON(json)["response"]["venues"].array!
                 for item in jSON {
                     self.baseArr.append(BaseData(data: item))
+                    self.initialize(component: component, data: self.baseArr)
                 }
-                print("\(self.baseArr)")
             }
         }.resume()
     }

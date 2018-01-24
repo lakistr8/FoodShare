@@ -12,5 +12,6 @@ protocol BaseViewControllerProtocol {
     
     func openController(name:String, storyboard:String)
     func close()
+    func initialize(component:String, data: [BaseData])
     
 }

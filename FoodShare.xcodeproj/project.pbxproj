@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		384186E720189B8B00528D21 /* BaseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384186E620189B8B00528D21 /* BaseData.swift */; };
 		384186EA2018B4D000528D21 /* BaseViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384186E92018B4D000528D21 /* BaseViewControllerProtocol.swift */; };
+		384186ED2018B8BE00528D21 /* BaseComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384186EC2018B8BE00528D21 /* BaseComponent.swift */; };
+		384186F02018B9CE00528D21 /* BaseCollectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 384186EF2018B9CE00528D21 /* BaseCollectionView.xib */; };
+		384186F22018BA0700528D21 /* BaseCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384186F12018BA0700528D21 /* BaseCollectionView.swift */; };
+		384186F42018BA8B00528D21 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384186F32018BA8B00528D21 /* BaseCollectionViewCell.swift */; };
+		384186F62018BA9B00528D21 /* BaseCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 384186F52018BA9B00528D21 /* BaseCollectionViewCell.xib */; };
 		38BF935F2018825A007A4C86 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BF935E2018825A007A4C86 /* AppDelegate.swift */; };
 		38BF93662018825A007A4C86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38BF93652018825A007A4C86 /* Assets.xcassets */; };
 		38BF93692018825A007A4C86 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38BF93672018825A007A4C86 /* LaunchScreen.storyboard */; };
@@ -22,6 +27,11 @@
 		26C9C6AE1AA7ECCA61FDC0B8 /* Pods-FoodShare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodShare.release.xcconfig"; path = "Pods/Target Support Files/Pods-FoodShare/Pods-FoodShare.release.xcconfig"; sourceTree = "<group>"; };
 		384186E620189B8B00528D21 /* BaseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseData.swift; sourceTree = "<group>"; };
 		384186E92018B4D000528D21 /* BaseViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewControllerProtocol.swift; sourceTree = "<group>"; };
+		384186EC2018B8BE00528D21 /* BaseComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseComponent.swift; sourceTree = "<group>"; };
+		384186EF2018B9CE00528D21 /* BaseCollectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BaseCollectionView.xib; sourceTree = "<group>"; };
+		384186F12018BA0700528D21 /* BaseCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionView.swift; sourceTree = "<group>"; };
+		384186F32018BA8B00528D21 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
+		384186F52018BA9B00528D21 /* BaseCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BaseCollectionViewCell.xib; sourceTree = "<group>"; };
 		38BF935B2018825A007A4C86 /* FoodShare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodShare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38BF935E2018825A007A4C86 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38BF93652018825A007A4C86 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -60,6 +70,34 @@
 				384186E92018B4D000528D21 /* BaseViewControllerProtocol.swift */,
 			);
 			path = protocols;
+			sourceTree = "<group>";
+		};
+		384186EE2018B8C200528D21 /* component */ = {
+			isa = PBXGroup;
+			children = (
+				384186EC2018B8BE00528D21 /* BaseComponent.swift */,
+				384186F72018BACE00528D21 /* collection view */,
+			);
+			path = component;
+			sourceTree = "<group>";
+		};
+		384186F72018BACE00528D21 /* collection view */ = {
+			isa = PBXGroup;
+			children = (
+				384186F82018BADD00528D21 /* cell */,
+				384186EF2018B9CE00528D21 /* BaseCollectionView.xib */,
+				384186F12018BA0700528D21 /* BaseCollectionView.swift */,
+			);
+			path = "collection view";
+			sourceTree = "<group>";
+		};
+		384186F82018BADD00528D21 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				384186F32018BA8B00528D21 /* BaseCollectionViewCell.swift */,
+				384186F52018BA9B00528D21 /* BaseCollectionViewCell.xib */,
+			);
+			path = cell;
 			sourceTree = "<group>";
 		};
 		38BF93522018825A007A4C86 = {
@@ -105,9 +143,10 @@
 		38BF937720188469007A4C86 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				38BF937520188464007A4C86 /* BaseViewController.swift */,
 				384186E820189B9000528D21 /* data */,
 				384186EB2018B5AB00528D21 /* protocols */,
-				38BF937520188464007A4C86 /* BaseViewController.swift */,
+				384186EE2018B8C200528D21 /* component */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -192,7 +231,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				38BF9371201882FA007A4C86 /* OAuthStoryboard.storyboard in Resources */,
+				384186F02018B9CE00528D21 /* BaseCollectionView.xib in Resources */,
 				38BF93692018825A007A4C86 /* LaunchScreen.storyboard in Resources */,
+				384186F62018BA9B00528D21 /* BaseCollectionViewCell.xib in Resources */,
 				38BF93662018825A007A4C86 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,6 +301,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				384186F22018BA0700528D21 /* BaseCollectionView.swift in Sources */,
+				384186F42018BA8B00528D21 /* BaseCollectionViewCell.swift in Sources */,
+				384186ED2018B8BE00528D21 /* BaseComponent.swift in Sources */,
 				38BF937320188316007A4C86 /* LoginViewController.swift in Sources */,
 				384186EA2018B4D000528D21 /* BaseViewControllerProtocol.swift in Sources */,
 				38BF935F2018825A007A4C86 /* AppDelegate.swift in Sources */,

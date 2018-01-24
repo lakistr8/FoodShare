@@ -12,7 +12,7 @@ class LoginViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.fetch(using:"fast_food")
+        self.fetch(using: "bar", and:"BaseCollectionView")
     }
 
     
