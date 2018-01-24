@@ -13,9 +13,11 @@
 		38BF9371201882FA007A4C86 /* OAuthStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38BF9370201882FA007A4C86 /* OAuthStoryboard.storyboard */; };
 		38BF937320188316007A4C86 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BF937220188316007A4C86 /* LoginViewController.swift */; };
 		38BF937620188464007A4C86 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BF937520188464007A4C86 /* BaseViewController.swift */; };
+		6DF3AECF5F26C53D365667C0 /* Pods_FoodShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 424693DDD79E270F97D42F6A /* Pods_FoodShare.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		26C9C6AE1AA7ECCA61FDC0B8 /* Pods-FoodShare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodShare.release.xcconfig"; path = "Pods/Target Support Files/Pods-FoodShare/Pods-FoodShare.release.xcconfig"; sourceTree = "<group>"; };
 		38BF935B2018825A007A4C86 /* FoodShare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodShare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38BF935E2018825A007A4C86 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38BF93652018825A007A4C86 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -24,6 +26,8 @@
 		38BF9370201882FA007A4C86 /* OAuthStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OAuthStoryboard.storyboard; sourceTree = "<group>"; };
 		38BF937220188316007A4C86 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		38BF937520188464007A4C86 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		424693DDD79E270F97D42F6A /* Pods_FoodShare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodShare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A22454599125680F8E2BBA5B /* Pods-FoodShare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodShare.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FoodShare/Pods-FoodShare.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DF3AECF5F26C53D365667C0 /* Pods_FoodShare.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,8 @@
 			children = (
 				38BF935D2018825A007A4C86 /* FoodShare */,
 				38BF935C2018825A007A4C86 /* Products */,
+				E80219640817475BADCADCA3 /* Pods */,
+				512C05C29B0464863AD5463E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -83,6 +90,23 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
+		512C05C29B0464863AD5463E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				424693DDD79E270F97D42F6A /* Pods_FoodShare.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E80219640817475BADCADCA3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A22454599125680F8E2BBA5B /* Pods-FoodShare.debug.xcconfig */,
+				26C9C6AE1AA7ECCA61FDC0B8 /* Pods-FoodShare.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -90,9 +114,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 38BF936D2018825A007A4C86 /* Build configuration list for PBXNativeTarget "FoodShare" */;
 			buildPhases = (
+				A725B41DB21F3CFD2344AF9A /* [CP] Check Pods Manifest.lock */,
 				38BF93572018825A007A4C86 /* Sources */,
 				38BF93582018825A007A4C86 /* Frameworks */,
 				38BF93592018825A007A4C86 /* Resources */,
+				300D14DB5417CA83E8F3460D /* [CP] Embed Pods Frameworks */,
+				9AFA22CEE9D06E750E756CC5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,6 +176,62 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		300D14DB5417CA83E8F3460D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FoodShare/Pods-FoodShare-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FoodShare/Pods-FoodShare-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9AFA22CEE9D06E750E756CC5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FoodShare/Pods-FoodShare-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A725B41DB21F3CFD2344AF9A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FoodShare-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		38BF93572018825A007A4C86 /* Sources */ = {
@@ -284,6 +367,7 @@
 		};
 		38BF936E2018825A007A4C86 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A22454599125680F8E2BBA5B /* Pods-FoodShare.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -298,6 +382,7 @@
 		};
 		38BF936F2018825A007A4C86 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 26C9C6AE1AA7ECCA61FDC0B8 /* Pods-FoodShare.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
