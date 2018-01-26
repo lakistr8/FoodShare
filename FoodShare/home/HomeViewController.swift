@@ -21,7 +21,7 @@ class HomeViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.initialize(component: "BaseCollectionView", data: basearr)
+//        self.initialize(component: "BaseCollectionView", data: basearr)
     }
     
     @IBAction func searchCafe(_sender: Any) {

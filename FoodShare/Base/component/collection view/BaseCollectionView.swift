@@ -18,14 +18,13 @@ class BaseCollectionView: BaseComponent, UICollectionViewDelegate, UICollectionV
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return self.dataSource.count
-        return 100
+        return self.dataSource.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell : BaseCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "BaseCollectionViewCell", for: indexPath) as! BaseCollectionViewCell
-//        cell.initializer(data:[self.dataSource[indexPath.row]])
-        cell.initializer(data:self.dataSource)
+        cell.initializer(data:[self.dataSource[indexPath.row]])
+//        self.dataSource.removeAll()
         return cell
     }
     

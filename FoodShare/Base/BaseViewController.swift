@@ -13,8 +13,9 @@ import CoreLocation
 
 class BaseViewController: UIViewController, BaseViewControllerProtocol, CLLocationManagerDelegate {
     
-    let clientID = "4YCWUAVMPUF1MOZEORUOFDSPFADBXL5JB0NISIJEKD3W2NKI"
-    let sicretSecret = "B334QTAMO551SQ4WVWNHZ4EHKAM2ZBPCXBUJDMRUR1OTF1K0"
+    let clientID = "1QWLOS50TD1WRW4NR03OH4DXKE4MOFVEHZJIP10SCZ34TCRZ"
+    let sicretSecret = "BTRB554YCLN4I3ATSFN3RVYLTIVO0RWR45JI0DKFZMMHM0G3"
+    
     var baseArr : [BaseData] = []
     let locationManager = CLLocationManager()
     var userDefaults = UserDefaults.standard
@@ -46,21 +47,28 @@ class BaseViewController: UIViewController, BaseViewControllerProtocol, CLLocati
         self.view.bringSubview(toFront: bottomBar)
     }
     
+    func clearView() {
+        for view in self.view.subviews {
+            view.removeFromSuperview()
+        }
+    }
+    
     func fetch(using query:String, and component:String) {
+        self.baseArr.removeAll()
         let qStr = query.replacingOccurrences(of: " ", with: "_")
         let quearyStr = qStr.lowercased()
         let url = "https://api.foursquare.com/v2/venues/search?client_id=\(clientID)&client_secret=\(sicretSecret)&ll=\(userDefaults.object(forKey: "lat") ?? ""),\(userDefaults.object(forKey: "lng") ?? "")&query=\(quearyStr)&v=20180126"
         let fullUrl = URL(string:url)
         print("\(fullUrl!)")
-//        Alamofire.request(fullUrl!).responseJSON { response in
-//            if let json = response.result.value {
-//                let jSON = JSON(json)["response"]["venues"].array!
-//                for item in jSON {
-//                    self.baseArr.append(BaseData(data: item))
-//                }
-//                self.initialize(component: component, data: self.baseArr)
-//            }
-//        }.resume()
+        Alamofire.request(fullUrl!).responseJSON { response in
+            if let json = response.result.value {
+                let jSON = JSON(json)["response"]["venues"].array!
+                for item in jSON {
+                    self.baseArr.append(BaseData(data: item))
+                }
+                self.initialize(component: component, data: self.baseArr)
+            }
+        }.resume()
     }
     
     func openController(name:String, storyboard:String) {
