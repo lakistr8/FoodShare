@@ -13,7 +13,7 @@ class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.fetch(using: "club", and: "BaseCollectionView")
+//        self.fetch(using: "fast_food", and: "BaseCollectionView")
     }
     
 

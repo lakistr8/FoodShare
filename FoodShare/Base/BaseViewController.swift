@@ -14,10 +14,11 @@ import CoreLocation
 class BaseViewController: UIViewController, BaseViewControllerProtocol, CLLocationManagerDelegate {
     
     let clientID = "4YCWUAVMPUF1MOZEORUOFDSPFADBXL5JB0NISIJEKD3W2NKI"
-    let sicretSecret = "OP4JFDTMOTMNE1T4WZ5VLFERC2M23QDMHXP5Z4101WLTEE3V"
+    let sicretSecret = "B334QTAMO551SQ4WVWNHZ4EHKAM2ZBPCXBUJDMRUR1OTF1K0"
     var baseArr : [BaseData] = []
     let locationManager = CLLocationManager()
     var userDefaults = UserDefaults.standard
+    @IBOutlet weak var container: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,13 +36,13 @@ class BaseViewController: UIViewController, BaseViewControllerProtocol, CLLocati
     
     func initialize(component:String, data:[BaseData]) {
         let nib = UINib(nibName: component, bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! BaseComponent
-        nib.frame = self.view.frame
+        nib.frame = self.container.frame
         nib.initializer(data:data)
         self.view.addSubview(nib)
     }
     
     func fetch(using query:String, and component:String) {
-        let url = "https://api.foursquare.com/v2/venues/search?client_id=\(clientID)&client_secret=\(sicretSecret)&ll=\(userDefaults.object(forKey: "lat") ?? ""),\(userDefaults.object(forKey: "lng") ?? "")&query=\(query)&v=20180124"
+        let url = "https://api.foursquare.com/v2/venues/search?client_id=\(clientID)&client_secret=\(sicretSecret)&ll=\(userDefaults.object(forKey: "lat") ?? ""),\(userDefaults.object(forKey: "lng") ?? "")&query=\(query)&v=20180126"
         let fullUrl = URL(string:url)
         Alamofire.request(fullUrl!).responseJSON { response in
             if let json = response.result.value {
