@@ -36,26 +36,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IzH-kD-GZC">
-                                <rect key="frame" x="0.0" y="64" width="375" height="543"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="538"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wl3-VY-wZT" userLabel="bottom bar">
-                                <rect key="frame" x="0.0" y="607" width="375" height="60"/>
+                                <rect key="frame" x="0.0" y="602" width="375" height="65"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gXf-U9-O1c" userLabel="caffe">
-                                        <rect key="frame" x="0.0" y="1" width="74.5" height="59"/>
+                                        <rect key="frame" x="0.0" y="1" width="74.5" height="64"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cup-and-plate" translatesAutoresizingMaskIntoConstraints="NO" id="51D-ua-Lls">
-                                                <rect key="frame" x="0.0" y="0.0" width="75" height="39.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="75" height="43"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Caffe" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="drA-LF-miM">
-                                                <rect key="frame" x="0.0" y="39.5" width="75" height="19.5"/>
+                                                <rect key="frame" x="0.0" y="43" width="75" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HkQ-lX-DwL">
-                                                <rect key="frame" x="0.0" y="0.0" width="74.5" height="59"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="74.5" height="64"/>
+                                                <connections>
+                                                    <action selector="searchCafeWith_sender:" destination="hj2-fS-nxE" eventType="touchUpInside" id="F1V-Eo-vGF"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -75,19 +78,22 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mPG-on-zwD" userLabel="restourant">
-                                        <rect key="frame" x="74.5" y="1" width="75" height="59"/>
+                                        <rect key="frame" x="74.5" y="1" width="75" height="64"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plate-fork-and-knife" translatesAutoresizingMaskIntoConstraints="NO" id="upW-Mw-dSW">
-                                                <rect key="frame" x="0.0" y="0.0" width="75" height="39.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="75" height="43"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restourant" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ppT-yc-DhU">
-                                                <rect key="frame" x="0.0" y="39.5" width="75" height="19.5"/>
+                                                <rect key="frame" x="0.0" y="43" width="75" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wqm-lt-tfw">
-                                                <rect key="frame" x="0.0" y="0.0" width="75" height="59"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="75" height="64"/>
+                                                <connections>
+                                                    <action selector="searchResWith_sender:" destination="hj2-fS-nxE" eventType="touchUpInside" id="sFo-2x-EQd"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -107,19 +113,22 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yOW-LV-Nv2" userLabel="fastfood">
-                                        <rect key="frame" x="149.5" y="1" width="75.5" height="59"/>
+                                        <rect key="frame" x="149.5" y="1" width="75.5" height="64"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="snacks-for-watch-sportive-game-of-rugby" translatesAutoresizingMaskIntoConstraints="NO" id="g5L-Sa-prg">
-                                                <rect key="frame" x="0.0" y="0.0" width="75.5" height="39.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="75.5" height="43"/>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FastFood" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Uf-Wm-sqw">
-                                                <rect key="frame" x="0.0" y="39.5" width="75.5" height="19.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fast Food" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Uf-Wm-sqw">
+                                                <rect key="frame" x="0.0" y="43" width="75.5" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Af-IX-JjK">
-                                                <rect key="frame" x="0.0" y="0.0" width="75.5" height="59"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="75.5" height="64"/>
+                                                <connections>
+                                                    <action selector="searcFfWith_sender:" destination="hj2-fS-nxE" eventType="touchUpInside" id="ky7-sS-cc1"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -139,20 +148,23 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zpg-V5-bWs" userLabel="hotel">
-                                        <rect key="frame" x="225" y="1" width="75" height="59"/>
+                                        <rect key="frame" x="225" y="1" width="75" height="64"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="3d-building" translatesAutoresizingMaskIntoConstraints="NO" id="r6l-Wa-EBA">
-                                                <rect key="frame" x="0.0" y="0.0" width="75" height="39.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="75" height="43"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hotel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cQK-jD-aTi">
-                                                <rect key="frame" x="0.0" y="39.5" width="75" height="19.5"/>
+                                                <rect key="frame" x="0.0" y="43" width="75" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bSc-Ug-bGq">
-                                                <rect key="frame" x="0.0" y="0.0" width="75" height="59"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="75" height="64"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <connections>
+                                                    <action selector="searchHtlWith_sender:" destination="hj2-fS-nxE" eventType="touchUpInside" id="FIc-5N-PgL"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -172,19 +184,22 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eke-XS-017" userLabel="location">
-                                        <rect key="frame" x="300" y="1" width="75" height="59"/>
+                                        <rect key="frame" x="300" y="1" width="75" height="64"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="map-pin-marked" translatesAutoresizingMaskIntoConstraints="NO" id="9R8-H7-bBL">
-                                                <rect key="frame" x="0.0" y="0.0" width="75" height="39.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="75" height="43"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gyE-9F-pVx">
-                                                <rect key="frame" x="0.0" y="39.5" width="75" height="19.5"/>
+                                                <rect key="frame" x="0.0" y="43" width="75" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qVl-R9-zq5">
-                                                <rect key="frame" x="0.0" y="0.0" width="75" height="59"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="75" height="64"/>
+                                                <connections>
+                                                    <action selector="showLocationViewWith_sender:" destination="hj2-fS-nxE" eventType="touchUpInside" id="pRx-8T-RJO"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -206,7 +221,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="0Dk-AZ-LZR"/>
+                                    <constraint firstAttribute="height" constant="65" id="0Dk-AZ-LZR"/>
                                     <constraint firstItem="mPG-on-zwD" firstAttribute="bottom" secondItem="gXf-U9-O1c" secondAttribute="bottom" id="157-hG-sOG"/>
                                     <constraint firstItem="Eke-XS-017" firstAttribute="width" secondItem="Zpg-V5-bWs" secondAttribute="width" id="AA7-Uj-jnd"/>
                                     <constraint firstItem="Zpg-V5-bWs" firstAttribute="leading" secondItem="yOW-LV-Nv2" secondAttribute="trailing" id="BZA-T9-lU4"/>
@@ -244,7 +259,13 @@
                     </view>
                     <navigationItem key="navigationItem" title="Food Share" id="Z8O-5F-G0O"/>
                     <connections>
+                        <outlet property="bottomBar" destination="Wl3-VY-wZT" id="asn-Cj-764"/>
+                        <outlet property="cafeLbl" destination="drA-LF-miM" id="xzs-0a-Hhx"/>
                         <outlet property="container" destination="IzH-kD-GZC" id="tDM-3W-QY0"/>
+                        <outlet property="ffLbl" destination="5Uf-Wm-sqw" id="k3n-CS-8R7"/>
+                        <outlet property="htlLbl" destination="cQK-jD-aTi" id="r5k-05-ddM"/>
+                        <outlet property="locLbl" destination="gyE-9F-pVx" id="lBA-bc-WmI"/>
+                        <outlet property="resLbl" destination="ppT-yc-DhU" id="V8U-qy-r2j"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XqA-n0-DHj" userLabel="First Responder" sceneMemberID="firstResponder"/>

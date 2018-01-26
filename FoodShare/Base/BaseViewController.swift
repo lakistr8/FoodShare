@@ -19,6 +19,7 @@ class BaseViewController: UIViewController, BaseViewControllerProtocol, CLLocati
     let locationManager = CLLocationManager()
     var userDefaults = UserDefaults.standard
     @IBOutlet weak var container: UIView!
+    @IBOutlet weak var bottomBar: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,23 +37,30 @@ class BaseViewController: UIViewController, BaseViewControllerProtocol, CLLocati
     
     func initialize(component:String, data:[BaseData]) {
         let nib = UINib(nibName: component, bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! BaseComponent
-        nib.frame = self.container.frame
+        nib.frame.size.width = UIWindow(frame: UIScreen.main.bounds).frame.size.width
+        nib.frame.size.height = self.container.frame.size.height
+        nib.frame.origin.y = self.container.frame.origin.y
+        nib.frame.origin.x = 0
         nib.initializer(data:data)
         self.view.addSubview(nib)
+        self.view.bringSubview(toFront: bottomBar)
     }
     
     func fetch(using query:String, and component:String) {
-        let url = "https://api.foursquare.com/v2/venues/search?client_id=\(clientID)&client_secret=\(sicretSecret)&ll=\(userDefaults.object(forKey: "lat") ?? ""),\(userDefaults.object(forKey: "lng") ?? "")&query=\(query)&v=20180126"
+        let qStr = query.replacingOccurrences(of: " ", with: "_")
+        let quearyStr = qStr.lowercased()
+        let url = "https://api.foursquare.com/v2/venues/search?client_id=\(clientID)&client_secret=\(sicretSecret)&ll=\(userDefaults.object(forKey: "lat") ?? ""),\(userDefaults.object(forKey: "lng") ?? "")&query=\(quearyStr)&v=20180126"
         let fullUrl = URL(string:url)
-        Alamofire.request(fullUrl!).responseJSON { response in
-            if let json = response.result.value {
-                let jSON = JSON(json)["response"]["venues"].array!
-                for item in jSON {
-                    self.baseArr.append(BaseData(data: item))
-                }
-                self.initialize(component: component, data: self.baseArr)
-            }
-        }.resume()
+        print("\(fullUrl!)")
+//        Alamofire.request(fullUrl!).responseJSON { response in
+//            if let json = response.result.value {
+//                let jSON = JSON(json)["response"]["venues"].array!
+//                for item in jSON {
+//                    self.baseArr.append(BaseData(data: item))
+//                }
+//                self.initialize(component: component, data: self.baseArr)
+//            }
+//        }.resume()
     }
     
     func openController(name:String, storyboard:String) {
