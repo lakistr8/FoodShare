@@ -49,12 +49,15 @@ class BaseViewController: UIViewController, BaseViewControllerProtocol, CLLocati
     
     func clearView() {
         for view in self.view.subviews {
-            view.removeFromSuperview()
+            if view.isKind(of: BaseComponent.self) {
+                view.removeFromSuperview()
+            }
         }
     }
     
     func fetch(using query:String, and component:String) {
         self.baseArr.removeAll()
+        clearView()
         let qStr = query.replacingOccurrences(of: " ", with: "_")
         let quearyStr = qStr.lowercased()
         let url = "https://api.foursquare.com/v2/venues/search?client_id=\(clientID)&client_secret=\(sicretSecret)&ll=\(userDefaults.object(forKey: "lat") ?? ""),\(userDefaults.object(forKey: "lng") ?? "")&query=\(quearyStr)&v=20180126"
