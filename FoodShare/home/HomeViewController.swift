@@ -25,18 +25,22 @@ class HomeViewController: BaseViewController {
     }
     
     @IBAction func searchCafe(_sender: Any) {
+        self.baseArr.removeAll()
         self.fetch(using: cafeLbl.text!, and: "BaseCollectionView")
     }
     
     @IBAction func searchRes(_sender: Any) {
+        self.baseArr.removeAll()
         self.fetch(using: resLbl.text!, and: "BaseCollectionView")
     }
     
     @IBAction func searcFf(_sender: Any) {
+        self.baseArr.removeAll()
         self.fetch(using: ffLbl.text!, and: "BaseCollectionView")
     }
     
     @IBAction func searchHtl(_sender: Any) {
+        self.baseArr.removeAll()
         self.fetch(using: htlLbl.text!, and: "BaseCollectionView")
     }
     

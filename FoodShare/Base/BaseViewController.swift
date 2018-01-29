@@ -21,6 +21,8 @@ class BaseViewController: UIViewController, BaseViewControllerProtocol, CLLocati
     var userDefaults = UserDefaults.standard
     @IBOutlet weak var container: UIView!
     @IBOutlet weak var bottomBar: UIView!
+    let date = Date()
+    let formatter = DateFormatter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,9 +60,11 @@ class BaseViewController: UIViewController, BaseViewControllerProtocol, CLLocati
     func fetch(using query:String, and component:String) {
         self.baseArr.removeAll()
         clearView()
+        formatter.dateFormat = "yyyyMMdd"
+        let currentday = formatter.string(from: date)
         let qStr = query.replacingOccurrences(of: " ", with: "_")
         let quearyStr = qStr.lowercased()
-        let url = "https://api.foursquare.com/v2/venues/search?client_id=\(clientID)&client_secret=\(sicretSecret)&ll=\(userDefaults.object(forKey: "lat") ?? ""),\(userDefaults.object(forKey: "lng") ?? "")&query=\(quearyStr)&v=20180126"
+        let url = "https://api.foursquare.com/v2/venues/search?client_id=\(clientID)&client_secret=\(sicretSecret)&ll=\(userDefaults.object(forKey: "lat") ?? ""),\(userDefaults.object(forKey: "lng") ?? "")&query=\(quearyStr)&v=\(currentday)"
         let fullUrl = URL(string:url)
         print("\(fullUrl!)")
         Alamofire.request(fullUrl!).responseJSON { response in
