@@ -42,6 +42,8 @@ class HomeViewController: BaseViewController {
     
     @IBAction func showLocationView (_sender: Any) {
         self.clearView()
+        self.userDefaults.removeObject(forKey: "lat")
+        self.userDefaults.removeObject(forKey: "lng")
         self.initialize(component: "MapView", data: basearr)
     }
     

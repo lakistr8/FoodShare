@@ -21,10 +21,29 @@ class MapView: BaseComponent, CLLocationManagerDelegate, MKMapViewDelegate {
         map.delegate = self
         map.showsUserLocation = true
         
+        let longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(addAnnotationOnLongPress(gesture:)))
+        longPressGesture.minimumPressDuration = 1.0
+        self.map.addGestureRecognizer(longPressGesture)
+        
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
+    }
+    
+    @objc func addAnnotationOnLongPress(gesture: UILongPressGestureRecognizer) {
+        
+        if gesture.state == .ended {
+            let point = gesture.location(in: self.map)
+            let coordinate = self.map.convert(point, toCoordinateFrom: self.map)
+            //Now use this coordinate to add annotation on map.
+            let annotation = MKPointAnnotation()
+            annotation.coordinate = coordinate
+            //Set title and subtitle if you want
+            self.map.addAnnotation(annotation)
+            UserDefaults.standard.set(annotation.coordinate.latitude, forKey: "lat")
+            UserDefaults.standard.set(annotation.coordinate.longitude, forKey: "lng")
+        }
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -37,8 +56,15 @@ class MapView: BaseComponent, CLLocationManagerDelegate, MKMapViewDelegate {
         locationManager.stopUpdatingLocation()
     }
     
+    @IBAction func savePin(_sender: Any) {
+        self.removeFromSuperview()
+        print("lat\(UserDefaults.standard.object(forKey: "lat") ?? ""), lng\(UserDefaults.standard.object(forKey: "lng") ?? "")")
+    }
+    
     @IBAction func close(_sender: Any) {
         self.removeFromSuperview()
+        UserDefaults.standard.removeObject(forKey: "lat")
+        UserDefaults.standard.removeObject(forKey: "lng")
     }
     
 }
