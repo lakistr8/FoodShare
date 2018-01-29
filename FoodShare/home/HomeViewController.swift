@@ -41,7 +41,7 @@ class HomeViewController: BaseViewController {
     }
     
     @IBAction func showLocationView (_sender: Any) {
-        // func for show map and save map pin location
+        self.initialize(component: "MapView", data: basearr)
     }
     
 }

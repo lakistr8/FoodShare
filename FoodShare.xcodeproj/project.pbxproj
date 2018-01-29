@@ -16,6 +16,8 @@
 		384186F62018BA9B00528D21 /* BaseCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 384186F52018BA9B00528D21 /* BaseCollectionViewCell.xib */; };
 		384186FA2018C9A800528D21 /* GridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384186F92018C9A800528D21 /* GridLayout.swift */; };
 		384186FD2018D18100528D21 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384186FC2018D18100528D21 /* HomeViewController.swift */; };
+		386CB50C201F1F36009B8F27 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386CB50B201F1F36009B8F27 /* MapView.swift */; };
+		386CB50E201F1F63009B8F27 /* MapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 386CB50D201F1F63009B8F27 /* MapView.xib */; };
 		38BF935F2018825A007A4C86 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BF935E2018825A007A4C86 /* AppDelegate.swift */; };
 		38BF93662018825A007A4C86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38BF93652018825A007A4C86 /* Assets.xcassets */; };
 		38BF93692018825A007A4C86 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38BF93672018825A007A4C86 /* LaunchScreen.storyboard */; };
@@ -35,6 +37,8 @@
 		384186F52018BA9B00528D21 /* BaseCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BaseCollectionViewCell.xib; sourceTree = "<group>"; };
 		384186F92018C9A800528D21 /* GridLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridLayout.swift; sourceTree = "<group>"; };
 		384186FC2018D18100528D21 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		386CB50B201F1F36009B8F27 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		386CB50D201F1F63009B8F27 /* MapView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapView.xib; sourceTree = "<group>"; };
 		38BF935B2018825A007A4C86 /* FoodShare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodShare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38BF935E2018825A007A4C86 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38BF93652018825A007A4C86 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -78,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				384186EC2018B8BE00528D21 /* BaseComponent.swift */,
+				386CB50F201F1F75009B8F27 /* map */,
 				384186F72018BACE00528D21 /* collection view */,
 			);
 			path = component;
@@ -109,6 +114,15 @@
 				384186F92018C9A800528D21 /* GridLayout.swift */,
 			);
 			path = layout;
+			sourceTree = "<group>";
+		};
+		386CB50F201F1F75009B8F27 /* map */ = {
+			isa = PBXGroup;
+			children = (
+				386CB50B201F1F36009B8F27 /* MapView.swift */,
+				386CB50D201F1F63009B8F27 /* MapView.xib */,
+			);
+			path = map;
 			sourceTree = "<group>";
 		};
 		38BF93522018825A007A4C86 = {
@@ -244,6 +258,7 @@
 				38BF9371201882FA007A4C86 /* HomeStoryboard.storyboard in Resources */,
 				384186F02018B9CE00528D21 /* BaseCollectionView.xib in Resources */,
 				38BF93692018825A007A4C86 /* LaunchScreen.storyboard in Resources */,
+				386CB50E201F1F63009B8F27 /* MapView.xib in Resources */,
 				384186F62018BA9B00528D21 /* BaseCollectionViewCell.xib in Resources */,
 				38BF93662018825A007A4C86 /* Assets.xcassets in Resources */,
 			);
@@ -319,6 +334,7 @@
 				38BF935F2018825A007A4C86 /* AppDelegate.swift in Sources */,
 				384186FD2018D18100528D21 /* HomeViewController.swift in Sources */,
 				384186FA2018C9A800528D21 /* GridLayout.swift in Sources */,
+				386CB50C201F1F36009B8F27 /* MapView.swift in Sources */,
 				384186E720189B8B00528D21 /* BaseData.swift in Sources */,
 				38BF937620188464007A4C86 /* BaseViewController.swift in Sources */,
 			);
