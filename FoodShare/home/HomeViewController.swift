@@ -41,6 +41,7 @@ class HomeViewController: BaseViewController {
     }
     
     @IBAction func showLocationView (_sender: Any) {
+        self.clearView()
         self.initialize(component: "MapView", data: basearr)
     }
     
