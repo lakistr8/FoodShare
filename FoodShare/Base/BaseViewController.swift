@@ -21,6 +21,7 @@ class BaseViewController: UIViewController, BaseViewControllerProtocol, CLLocati
     var userDefaults = UserDefaults.standard
     @IBOutlet weak var container: UIView!
     @IBOutlet weak var bottomBar: UIView!
+    @IBOutlet weak var img: UIImageView!
     let date = Date()
     let formatter = DateFormatter()
     
@@ -64,6 +65,7 @@ class BaseViewController: UIViewController, BaseViewControllerProtocol, CLLocati
         let currentday = formatter.string(from: date)
         let qStr = query.replacingOccurrences(of: " ", with: "_")
         let quearyStr = qStr.lowercased()
+        self.img.image = UIImage(named: "\(query).png")
         let url = "https://api.foursquare.com/v2/venues/search?client_id=\(clientID)&client_secret=\(sicretSecret)&ll=\(userDefaults.object(forKey: "lat") ?? ""),\(userDefaults.object(forKey: "lng") ?? "")&query=\(quearyStr)&v=\(currentday)"
         let fullUrl = URL(string:url)
         print("\(fullUrl!)")

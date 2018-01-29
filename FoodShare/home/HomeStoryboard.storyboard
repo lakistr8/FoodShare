@@ -37,7 +37,18 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IzH-kD-GZC">
                                 <rect key="frame" x="0.0" y="64" width="375" height="538"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lwS-LK-Bux">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="538"/>
+                                    </imageView>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="lwS-LK-Bux" secondAttribute="bottom" id="Lx4-62-5hK"/>
+                                    <constraint firstItem="lwS-LK-Bux" firstAttribute="top" secondItem="IzH-kD-GZC" secondAttribute="top" id="Nzn-9O-LHS"/>
+                                    <constraint firstItem="lwS-LK-Bux" firstAttribute="leading" secondItem="IzH-kD-GZC" secondAttribute="leading" id="PYE-99-Mcv"/>
+                                    <constraint firstAttribute="trailing" secondItem="lwS-LK-Bux" secondAttribute="trailing" id="kq9-tl-52b"/>
+                                </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wl3-VY-wZT" userLabel="bottom bar">
                                 <rect key="frame" x="0.0" y="602" width="375" height="65"/>
@@ -264,6 +275,7 @@
                         <outlet property="container" destination="IzH-kD-GZC" id="tDM-3W-QY0"/>
                         <outlet property="ffLbl" destination="5Uf-Wm-sqw" id="k3n-CS-8R7"/>
                         <outlet property="htlLbl" destination="cQK-jD-aTi" id="r5k-05-ddM"/>
+                        <outlet property="img" destination="lwS-LK-Bux" id="cot-5a-ugt"/>
                         <outlet property="locLbl" destination="gyE-9F-pVx" id="lBA-bc-WmI"/>
                         <outlet property="resLbl" destination="ppT-yc-DhU" id="V8U-qy-r2j"/>
                     </connections>
