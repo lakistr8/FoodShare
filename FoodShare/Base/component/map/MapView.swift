@@ -13,25 +13,43 @@ import MapKit
 class MapView: BaseComponent, CLLocationManagerDelegate, MKMapViewDelegate {
 
     @IBOutlet weak var map: MKMapView!
-     let locationManager = CLLocationManager()
+    var locationManager = CLLocationManager()
     
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        map.delegate = self
-        map.showsUserLocation = true
-        
-        let longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(addAnnotationOnLongPress(gesture:)))
+        let longPressGesture = UILongPressGestureRecognizer(target: self, action: Selector(("addAnnotationOnLongPress")))
         longPressGesture.minimumPressDuration = 1.0
         self.map.addGestureRecognizer(longPressGesture)
         
-        locationManager.delegate = self
+        map.delegate = self
+        map.showsUserLocation = true
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.delegate = self
+        
+        //Check for Location Services
+        if (CLLocationManager.locationServicesEnabled()) {
+            locationManager = CLLocationManager()
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.requestAlwaysAuthorization()
+            locationManager.requestWhenInUseAuthorization()
+        }
         locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingLocation()
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.startUpdatingLocation()
+        }
+        //Zoom to user location
+        let noLocation = CLLocationCoordinate2D()
+        let viewRegion = MKCoordinateRegionMakeWithDistance(noLocation, 200, 200)
+        map.setRegion(viewRegion, animated: false)
+        
+        DispatchQueue.main.async {
+            self.locationManager.startUpdatingLocation()
+        }
     }
     
-    @objc func addAnnotationOnLongPress(gesture: UILongPressGestureRecognizer) {
+    func addAnnotationOnLongPress(gesture: UILongPressGestureRecognizer) {
         
         if gesture.state == .ended {
             let point = gesture.location(in: self.map)
@@ -41,18 +59,20 @@ class MapView: BaseComponent, CLLocationManagerDelegate, MKMapViewDelegate {
             annotation.coordinate = coordinate
             //Set title and subtitle if you want
             self.map.addAnnotation(annotation)
-            UserDefaults.standard.set(annotation.coordinate.latitude, forKey: "lat")
-            UserDefaults.standard.set(annotation.coordinate.longitude, forKey: "lng")
         }
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let location = locations[0]
-        
-        let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
-        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
-        
+        let userLoction: CLLocation = locations[0]
+        let latitude = userLoction.coordinate.latitude
+        let longitude = userLoction.coordinate.longitude
+        let latDelta: CLLocationDegrees = 0.01
+        let lonDelta: CLLocationDegrees = 0.01
+        let span:MKCoordinateSpan = MKCoordinateSpanMake(latDelta, lonDelta)
+        let location: CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude, longitude)
+        let region: MKCoordinateRegion = MKCoordinateRegionMake(location, span)
         self.map.setRegion(region, animated: true)
+        self.map.showsUserLocation = true
         locationManager.stopUpdatingLocation()
     }
     
