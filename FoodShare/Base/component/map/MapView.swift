@@ -18,7 +18,7 @@ class MapView: BaseComponent, CLLocationManagerDelegate, MKMapViewDelegate {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        let longPressGesture = UILongPressGestureRecognizer(target: self, action: Selector(("addAnnotationOnLongPress")))
+        let longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(addAnnotationOnLongPress(gesture:)))
         longPressGesture.minimumPressDuration = 1.0
         self.map.addGestureRecognizer(longPressGesture)
         
@@ -49,7 +49,7 @@ class MapView: BaseComponent, CLLocationManagerDelegate, MKMapViewDelegate {
         }
     }
     
-    func addAnnotationOnLongPress(gesture: UILongPressGestureRecognizer) {
+    @objc func addAnnotationOnLongPress(gesture: UILongPressGestureRecognizer) {
         
         if gesture.state == .ended {
             let point = gesture.location(in: self.map)

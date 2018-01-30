@@ -15,6 +15,7 @@ class HomeViewController: BaseViewController {
     @IBOutlet weak var ffLbl: UILabel!
     @IBOutlet weak var htlLbl: UILabel!
     @IBOutlet weak var locLbl: UILabel!
+    @IBOutlet weak var centralView: UIView!
     
     let basearr: [BaseData] = [
     ]
@@ -26,21 +27,25 @@ class HomeViewController: BaseViewController {
     
     @IBAction func searchCafe(_sender: Any) {
         self.baseArr.removeAll()
+        centralView.isHidden = true
         self.fetch(using: cafeLbl.text!, and: "BaseCollectionView")
     }
     
     @IBAction func searchRes(_sender: Any) {
         self.baseArr.removeAll()
+        centralView.isHidden = true
         self.fetch(using: resLbl.text!, and: "BaseCollectionView")
     }
     
     @IBAction func searcFf(_sender: Any) {
         self.baseArr.removeAll()
+        centralView.isHidden = true
         self.fetch(using: ffLbl.text!, and: "BaseCollectionView")
     }
     
     @IBAction func searchHtl(_sender: Any) {
         self.baseArr.removeAll()
+        centralView.isHidden = true
         self.fetch(using: htlLbl.text!, and: "BaseCollectionView")
     }
     

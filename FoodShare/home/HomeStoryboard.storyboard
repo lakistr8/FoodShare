@@ -38,15 +38,46 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IzH-kD-GZC">
                                 <rect key="frame" x="0.0" y="64" width="375" height="538"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lwS-LK-Bux">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lwS-LK-Bux">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="538"/>
                                     </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3DB-VB-UoB">
+                                        <rect key="frame" x="10" y="144" width="355" height="250"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find place you like using location." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CDt-Xw-Obk">
+                                                <rect key="frame" x="0.0" y="0.0" width="355" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="y56-SC-RQT"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMG_1664" translatesAutoresizingMaskIntoConstraints="NO" id="1ls-Ah-pgd">
+                                                <rect key="frame" x="0.0" y="30" width="355" height="220"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="CDt-Xw-Obk" secondAttribute="trailing" id="3vb-Yf-6DF"/>
+                                            <constraint firstItem="CDt-Xw-Obk" firstAttribute="leading" secondItem="3DB-VB-UoB" secondAttribute="leading" id="AaE-r0-1lx"/>
+                                            <constraint firstItem="1ls-Ah-pgd" firstAttribute="leading" secondItem="CDt-Xw-Obk" secondAttribute="leading" id="Gaj-Y3-k27"/>
+                                            <constraint firstItem="1ls-Ah-pgd" firstAttribute="top" secondItem="CDt-Xw-Obk" secondAttribute="bottom" id="QXy-2f-gNM"/>
+                                            <constraint firstAttribute="bottom" secondItem="1ls-Ah-pgd" secondAttribute="bottom" id="Y1v-pT-sTg"/>
+                                            <constraint firstItem="CDt-Xw-Obk" firstAttribute="top" secondItem="3DB-VB-UoB" secondAttribute="top" id="dhK-iL-kn3"/>
+                                            <constraint firstItem="1ls-Ah-pgd" firstAttribute="trailing" secondItem="CDt-Xw-Obk" secondAttribute="trailing" id="eOk-GP-iM8"/>
+                                            <constraint firstAttribute="height" constant="250" id="jV3-el-JGP"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="3DB-VB-UoB" firstAttribute="centerY" secondItem="lwS-LK-Bux" secondAttribute="centerY" id="4vv-wj-DYZ"/>
                                     <constraint firstAttribute="bottom" secondItem="lwS-LK-Bux" secondAttribute="bottom" id="Lx4-62-5hK"/>
                                     <constraint firstItem="lwS-LK-Bux" firstAttribute="top" secondItem="IzH-kD-GZC" secondAttribute="top" id="Nzn-9O-LHS"/>
                                     <constraint firstItem="lwS-LK-Bux" firstAttribute="leading" secondItem="IzH-kD-GZC" secondAttribute="leading" id="PYE-99-Mcv"/>
+                                    <constraint firstItem="3DB-VB-UoB" firstAttribute="trailing" secondItem="lwS-LK-Bux" secondAttribute="trailing" constant="-10" id="YiD-1t-N0O"/>
+                                    <constraint firstItem="3DB-VB-UoB" firstAttribute="leading" secondItem="lwS-LK-Bux" secondAttribute="leading" constant="10" id="hyU-Kv-hIY"/>
                                     <constraint firstAttribute="trailing" secondItem="lwS-LK-Bux" secondAttribute="trailing" id="kq9-tl-52b"/>
                                 </constraints>
                             </view>
@@ -94,7 +125,7 @@
                                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plate-fork-and-knife" translatesAutoresizingMaskIntoConstraints="NO" id="upW-Mw-dSW">
                                                 <rect key="frame" x="0.0" y="0.0" width="75" height="43"/>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restourant" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ppT-yc-DhU">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restaurant" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ppT-yc-DhU">
                                                 <rect key="frame" x="0.0" y="43" width="75" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <nil key="textColor"/>
@@ -272,6 +303,7 @@
                     <connections>
                         <outlet property="bottomBar" destination="Wl3-VY-wZT" id="asn-Cj-764"/>
                         <outlet property="cafeLbl" destination="drA-LF-miM" id="xzs-0a-Hhx"/>
+                        <outlet property="centralView" destination="3DB-VB-UoB" id="Qes-XZ-gNI"/>
                         <outlet property="container" destination="IzH-kD-GZC" id="tDM-3W-QY0"/>
                         <outlet property="ffLbl" destination="5Uf-Wm-sqw" id="k3n-CS-8R7"/>
                         <outlet property="htlLbl" destination="cQK-jD-aTi" id="r5k-05-ddM"/>
@@ -287,6 +319,7 @@
     </scenes>
     <resources>
         <image name="3d-building" width="24" height="24"/>
+        <image name="IMG_1664" width="320" height="321"/>
         <image name="cup-and-plate" width="24" height="24"/>
         <image name="map-pin-marked" width="24" height="24"/>
         <image name="plate-fork-and-knife" width="24" height="24"/>
