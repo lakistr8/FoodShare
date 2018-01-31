@@ -18,6 +18,7 @@ struct BaseData {
     var address: String
     var city: String
     var country: String
+    var phone: String
     
     init(data: JSON) {
         self.id = data["id"].stringValue
@@ -27,6 +28,7 @@ struct BaseData {
         self.address = data["location"]["address"].stringValue
         self.city = data["location"]["city"].stringValue
         self.country = data["location"]["country"].stringValue
+        self.phone = data["contact"]["phone"].stringValue
     }
     
 }

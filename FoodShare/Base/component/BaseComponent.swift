@@ -11,7 +11,6 @@ import UIKit
 class BaseComponent: UIView {
     
     var dataSource : [BaseData] = []
-    
     override func layoutSubviews() {
         super.layoutSubviews()
         

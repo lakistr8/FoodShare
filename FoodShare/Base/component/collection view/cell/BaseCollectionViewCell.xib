@@ -36,6 +36,12 @@
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pU8-zl-4hJ">
+                    <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                    <connections>
+                        <action selector="btnTapp:" destination="iN0-l3-epB" eventType="touchUpInside" id="cu7-Nn-4K9"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
@@ -43,22 +49,27 @@
                 <constraint firstItem="ONO-gc-JYG" firstAttribute="top" secondItem="p7z-yV-pf9" secondAttribute="bottom" id="3wp-tX-3at"/>
                 <constraint firstItem="ONO-gc-JYG" firstAttribute="trailing" secondItem="p7z-yV-pf9" secondAttribute="trailing" id="9D9-sK-P4B"/>
                 <constraint firstItem="p7z-yV-pf9" firstAttribute="trailing" secondItem="ZeK-EZ-BaC" secondAttribute="trailing" id="Fj1-NB-yg3"/>
+                <constraint firstItem="pU8-zl-4hJ" firstAttribute="top" secondItem="Jzh-5p-nhm" secondAttribute="top" id="G7Z-EO-6xH"/>
                 <constraint firstItem="Jzh-5p-nhm" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Hfb-Lb-zh8"/>
+                <constraint firstItem="pU8-zl-4hJ" firstAttribute="trailing" secondItem="Jzh-5p-nhm" secondAttribute="trailing" id="KNg-NG-4Qb"/>
                 <constraint firstItem="ONO-gc-JYG" firstAttribute="leading" secondItem="p7z-yV-pf9" secondAttribute="leading" id="Kqg-Ec-dGD"/>
                 <constraint firstItem="ZeK-EZ-BaC" firstAttribute="height" secondItem="Jzh-5p-nhm" secondAttribute="height" id="R6u-Wr-Mpp"/>
                 <constraint firstItem="ZeK-EZ-BaC" firstAttribute="top" secondItem="Jzh-5p-nhm" secondAttribute="bottom" id="UER-v8-mv8"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="ONO-gc-JYG" secondAttribute="bottom" id="WqV-E9-wET"/>
+                <constraint firstItem="pU8-zl-4hJ" firstAttribute="leading" secondItem="Jzh-5p-nhm" secondAttribute="leading" id="YAg-OS-g2P"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Jzh-5p-nhm" secondAttribute="trailing" id="cCn-qx-t01"/>
                 <constraint firstItem="p7z-yV-pf9" firstAttribute="height" secondItem="ZeK-EZ-BaC" secondAttribute="height" id="eBg-X4-v5g"/>
                 <constraint firstItem="ZeK-EZ-BaC" firstAttribute="trailing" secondItem="Jzh-5p-nhm" secondAttribute="trailing" id="ezC-vx-rzZ"/>
                 <constraint firstItem="p7z-yV-pf9" firstAttribute="top" secondItem="ZeK-EZ-BaC" secondAttribute="bottom" id="f2g-B2-QPM"/>
                 <constraint firstItem="p7z-yV-pf9" firstAttribute="leading" secondItem="ZeK-EZ-BaC" secondAttribute="leading" id="hNJ-uf-Gag"/>
+                <constraint firstItem="pU8-zl-4hJ" firstAttribute="bottom" secondItem="ONO-gc-JYG" secondAttribute="bottom" id="rT8-Ci-LjV"/>
                 <constraint firstItem="ZeK-EZ-BaC" firstAttribute="leading" secondItem="Jzh-5p-nhm" secondAttribute="leading" id="uUQ-VT-pkL"/>
                 <constraint firstItem="Jzh-5p-nhm" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="wPM-ra-9u5"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
                 <outlet property="adressLbl" destination="ONO-gc-JYG" id="JEH-rN-lct"/>
+                <outlet property="btn" destination="pU8-zl-4hJ" id="dVq-Wb-qVr"/>
                 <outlet property="cityLbl" destination="p7z-yV-pf9" id="kgX-zN-APu"/>
                 <outlet property="nameLbl" destination="Jzh-5p-nhm" id="Nj9-Ql-u60"/>
                 <outlet property="stateLbl" destination="ZeK-EZ-BaC" id="glc-Kn-Cnt"/>
