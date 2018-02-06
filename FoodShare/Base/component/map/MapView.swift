@@ -78,13 +78,15 @@ class MapView: BaseComponent, CLLocationManagerDelegate, MKMapViewDelegate {
     
     @IBAction func savePin(_sender: Any) {
         self.removeFromSuperview()
+        UserDefaults.standard.set(self.map.centerCoordinate.latitude, forKey: "lat")
+        UserDefaults.standard.set(self.map.centerCoordinate.longitude, forKey: "lng")
         print("lat\(UserDefaults.standard.object(forKey: "lat") ?? ""), lng\(UserDefaults.standard.object(forKey: "lng") ?? "")")
     }
     
     @IBAction func close(_sender: Any) {
         self.removeFromSuperview()
-        UserDefaults.standard.removeObject(forKey: "lat")
-        UserDefaults.standard.removeObject(forKey: "lng")
+//        UserDefaults.standard.removeObject(forKey: "lat")
+//        UserDefaults.standard.removeObject(forKey: "lng")
     }
     
 }
