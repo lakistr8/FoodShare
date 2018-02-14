@@ -21,6 +21,8 @@ class BaseCollectionViewCell: UICollectionViewCell {
     var phone : String?
     var lat : Double?
     var lng : Double?
+    let closeBtn = UIButton(frame: CGRect(x: 10, y: 30, width: 30, height: 30))
+    let detail = UINib(nibName: "DetailView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! DetailView
     
     func initializer(data: [BaseData]) {
         for item in data {
@@ -31,17 +33,26 @@ class BaseCollectionViewCell: UICollectionViewCell {
             self.phone = item.phone
             self.lat = item.lat
             self.lng = item.lng
+            self.bringSubview(toFront: self.btn)
         }
     }
     
+    @objc func close() {
+        self.screen.removeFromSuperview()
+        self.detail.removeFromSuperview()
+        self.closeBtn.removeFromSuperview()
+    }
+    
     func showDeatil() {
-        let detail = UINib(nibName: "DetailView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! DetailView
         detail.nameLbl.text = self.nameLbl.text
         detail.streetLbl.text = "Street \(self.adressLbl.text ?? "") \n Contact: \(self.phone ?? "")"
         detail.stateLbl.text = self.stateLbl.text
         detail.townLbl.text = self.cityLbl.text
-        detail.frame = screen.frame
+        detail.frame = self.screen.frame
         screen.addSubview(detail)
+        self.closeBtn.addTarget(self, action: #selector(close), for: .touchUpInside)
+        self.closeBtn.setTitle("X", for: .normal)
+        screen.addSubview(closeBtn)
         screen.makeKeyAndVisible()
     }
     

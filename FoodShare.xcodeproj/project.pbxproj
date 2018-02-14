@@ -482,12 +482,14 @@
 			baseConfigurationReference = A22454599125680F8E2BBA5B /* Pods-FoodShare.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = E8796QJ873;
+				DEVELOPMENT_TEAM = QC44D63L54;
 				INFOPLIST_FILE = FoodShare/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = str8.FoodShare;
+				PRODUCT_BUNDLE_IDENTIFIER = str8.FoodShar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -498,12 +500,14 @@
 			baseConfigurationReference = 26C9C6AE1AA7ECCA61FDC0B8 /* Pods-FoodShare.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = E8796QJ873;
+				DEVELOPMENT_TEAM = QC44D63L54;
 				INFOPLIST_FILE = FoodShare/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = str8.FoodShare;
+				PRODUCT_BUNDLE_IDENTIFIER = str8.FoodShar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
