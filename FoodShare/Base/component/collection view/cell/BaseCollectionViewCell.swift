@@ -38,9 +38,9 @@ class BaseCollectionViewCell: UICollectionViewCell {
     }
     
     @objc func close() {
-        self.screen.removeFromSuperview()
-        self.detail.removeFromSuperview()
-        self.closeBtn.removeFromSuperview()
+        self.screen.isHidden = true
+        self.detail.isHidden = true
+        self.closeBtn.isHidden = true
     }
     
     func showDeatil() {
@@ -49,11 +49,11 @@ class BaseCollectionViewCell: UICollectionViewCell {
         detail.stateLbl.text = self.stateLbl.text
         detail.townLbl.text = self.cityLbl.text
         detail.frame = self.screen.frame
-        screen.addSubview(detail)
+        self.screen.addSubview(detail)
         self.closeBtn.addTarget(self, action: #selector(close), for: .touchUpInside)
         self.closeBtn.setTitle("X", for: .normal)
-        screen.addSubview(closeBtn)
-        screen.makeKeyAndVisible()
+        self.screen.addSubview(closeBtn)
+        self.screen.makeKeyAndVisible()
     }
     
     @IBAction func btnTapp(_ sender: Any) {
