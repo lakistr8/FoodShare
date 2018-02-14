@@ -13,8 +13,8 @@ import CoreLocation
 
 class BaseViewController: UIViewController, BaseViewControllerProtocol, CLLocationManagerDelegate {
     
-    let clientID = "1QWLOS50TD1WRW4NR03OH4DXKE4MOFVEHZJIP10SCZ34TCRZ"
-    let sicretSecret = "MZR2VY2CEYG3KXABPVXUM0FO0R3A1QK342XBWHAZRAHLMKAG"
+    let clientID = "*************"
+    let sicretSecret = "************"
     
     var baseArr : [BaseData] = []
     let locationManager = CLLocationManager()
