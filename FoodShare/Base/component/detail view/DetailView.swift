@@ -16,8 +16,25 @@ class DetailView: BaseComponent {
     @IBOutlet weak var streetLbl: UILabel!
     @IBOutlet weak var townLbl: UILabel!
     @IBOutlet weak var stateLbl: UILabel!
+    @IBOutlet var lbls : [UILabel]!
+    
+    override func layoutSubviews() {
+         super.layoutSubviews()
+        layout()
+    }
     
     
+    func layout() {
+        for item in lbls {
+            item.layer.masksToBounds = true
+            item.layer.cornerRadius = 10
+            item.backgroundColor = UIColor.black.withAlphaComponent(0.9)
+            item.textColor = UIColor.white
+        }
+        map.layer.masksToBounds = true
+        map.layer.cornerRadius = map.frame.width / 2
+        map.layer.shadowRadius = 10
+    }
     
 
 }

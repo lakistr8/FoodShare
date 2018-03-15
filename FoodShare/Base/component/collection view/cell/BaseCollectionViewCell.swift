@@ -66,6 +66,7 @@ class BaseCollectionViewCell: UICollectionViewCell, CLLocationManagerDelegate, M
         self.screen.addSubview(detail)
         self.closeBtn.addTarget(self, action: #selector(close), for: .touchUpInside)
         self.closeBtn.setTitle("X", for: .normal)
+        self.closeBtn.backgroundColor = UIColor.darkGray
         self.screen.addSubview(closeBtn)
         self.screen.makeKeyAndVisible()
     }
