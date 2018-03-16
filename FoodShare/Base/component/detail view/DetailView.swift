@@ -32,7 +32,7 @@ class DetailView: BaseComponent {
             item.textColor = UIColor.white
         }
         map.layer.masksToBounds = true
-        map.layer.cornerRadius = map.frame.width / 2
+        map.layer.cornerRadius = map.frame.height / 2
         map.layer.shadowRadius = 10
     }
     

@@ -13,10 +13,25 @@ import MapKit
 class MapView: BaseComponent, CLLocationManagerDelegate, MKMapViewDelegate {
 
     @IBOutlet weak var map: MKMapView!
+    @IBOutlet weak var lbl:UILabel!
+    @IBOutlet weak var btn: UIButton!
+    @IBOutlet weak var closeBtn: UIButton!
     var locationManager = CLLocationManager()
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        
+        map.layer.masksToBounds = true
+        map.layer.cornerRadius = 100
+        
+        lbl.layer.masksToBounds = true
+        lbl.layer.cornerRadius = 20
+        
+        btn.layer.masksToBounds = true
+        btn.layer.cornerRadius = 20
+        
+        closeBtn.layer.masksToBounds = true
+        closeBtn.layer.cornerRadius = 10
         
         let longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(addAnnotationOnLongPress(gesture:)))
         longPressGesture.minimumPressDuration = 1.0

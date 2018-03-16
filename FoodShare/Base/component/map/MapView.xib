@@ -80,7 +80,7 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" white="0.66666666666666663" alpha="0.49609375" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="LGs-kQ-tKg" firstAttribute="height" secondItem="rim-fM-ago" secondAttribute="height" multiplier="0.25" id="1Es-Si-l6o"/>
                 <constraint firstItem="LGs-kQ-tKg" firstAttribute="trailing" secondItem="rim-fM-ago" secondAttribute="trailing" id="6fs-cl-Lun"/>
@@ -93,6 +93,9 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
+                <outlet property="btn" destination="6fD-In-6wG" id="drV-dk-nw3"/>
+                <outlet property="closeBtn" destination="PcV-bt-JJ7" id="nk4-V5-hTA"/>
+                <outlet property="lbl" destination="iUy-I4-he9" id="jcN-K3-dxk"/>
                 <outlet property="map" destination="NUf-7I-yc7" id="Me1-Bk-tyG"/>
             </connections>
         </view>
